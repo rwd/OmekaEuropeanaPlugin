@@ -42,6 +42,13 @@ and display the results with links to the full record on Europeana's website.
 Visit `/europeana` and enter your query into the search
 form, adhering to the [Europeana REST API Query Syntax](http://labs.europeana.eu/api/query/).
 
+### Shortcode
+
+To include the Europeana search form elsewhere on your Omeka site, use the
+shortcode `[europeana_search_form]`.
+
+For more information on using shortcodes in Omeka, see http://omeka.org/codex/Shortcodes
+
 ## Change log
 
 See CHANGELOG.md
