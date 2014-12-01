@@ -13,11 +13,11 @@ and display the results with links to the full record on Europeana's website.
 
 1. Download the plugin
 2. Extract to the plugins directory of your Omeka installation
-3. Enable the plugin at http://www.example.com/admin/plugins
+3. Enable the plugin at `/admin/plugins`
 
 ## Configuration
 
-1. Configure the plugin at http://www.example.com/admin/plugins/config?name=Europeana
+1. Configure the plugin at `/admin/plugins/config?name=Europeana`
   to set your API key, and other optional settings.
 2. It is *highly recommended* to configure caching of results from the API to
   avoid exceeding your API key's usage limit, and to improve responsiveness of
@@ -39,8 +39,8 @@ and display the results with links to the full record on Europeana's website.
 
 ## Usage
 
-Visit http://www.example.com/europeana and enter your query into the search
-form, adhering to the "Europeana REST API Query Syntax":http://labs.europeana.eu/api/query/
+Visit `/europeana` and enter your query into the search
+form, adhering to the [Europeana REST API Query Syntax](http://labs.europeana.eu/api/query/)
 
 ## Change log
 
