@@ -1,6 +1,6 @@
 # Europeana plugin for Omeka
 
-This plugin provides a means to search the Europeana REST API from with Omeka
+This plugin provides a means to search the Europeana REST API from within Omeka
 and display the results with links to the full record on Europeana's website.
 
 ## Requirements
@@ -35,12 +35,12 @@ and display the results with links to the full record on Europeana's website.
   ```
   
   This will cache search results to the file system for one day. For full
-  documentation of the settings available, see http://framework.zend.com/manual/1.12/en/zend.cache.html
+  documentation of the settings available, see the (Zend_Cache manual)[http://framework.zend.com/manual/1.12/en/zend.cache.html].
 
 ## Usage
 
 Visit `/europeana` and enter your query into the search
-form, adhering to the [Europeana REST API Query Syntax](http://labs.europeana.eu/api/query/)
+form, adhering to the [Europeana REST API Query Syntax](http://labs.europeana.eu/api/query/).
 
 ## Change log
 
