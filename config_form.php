@@ -12,10 +12,10 @@
 
     <div class="field">
         <div class="two columns alpha">
-            <label for="europeana_query"><?php echo __('Query'); ?></label>
+            <label for="europeana_query"><?php echo __('Limiting query'); ?></label>
         </div>
         <div class="inputs five columns omega">
-            <p class="explanation"><?php echo __("A query to send to the Europeana API, in addition to any user-entered terms. Use this to limit the results returned, e.g. to those from a particular provider.");?></p>
+            <p class="explanation"><?php echo __('A query to send to the Europeana REST API in addition to any user-entered terms, used to limit the results returned. For example, to only show results related to Vincent Van Gogh, enter: <code>who:"vincent van gogh"</code>');?></p>
             <?php echo $view->formText('europeana_query', get_option('europeana_query')); ?>
         </div>
     </div>
