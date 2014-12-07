@@ -1,5 +1,9 @@
 # Europeana plugin for Omeka: CHANGELOG
 
+## Version 2.0.1
+
+* Adds a public navigation link to search Europeana
+
 ## Version 2.0.0
 
 * Initial release
