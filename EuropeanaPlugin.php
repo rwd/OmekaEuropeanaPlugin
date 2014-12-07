@@ -23,6 +23,10 @@ class EuropeanaPlugin extends Omeka_Plugin_AbstractPlugin
         'define_routes',
     );
     
+    protected $_filters = array(
+        'public_navigation_main',
+    );
+    
     public function hookInstall()
     {
         set_option('europeana_api_key', '');
@@ -67,6 +71,15 @@ class EuropeanaPlugin extends Omeka_Plugin_AbstractPlugin
     
     public function searchForm($args, $view) {
         return $view->partial('europeana/search-form.php', array('query' => ''));
+    }
+    
+    public function filterPublicNavigationMain($navArray)
+    {
+        $navArray['Search Europeana'] = array(
+            'label'=>__('Search Europeana'),
+            'uri' => url('europeana')
+        );
+        return $navArray;
     }
 }
 
