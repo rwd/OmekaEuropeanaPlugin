@@ -24,8 +24,7 @@
                 <?php echo __(ucfirst(strtolower(metadata($record, 'type')))); ?>
             </td>
             <td>
-                <a href="<?php echo metadata($record, 'edmIsShownAt'); ?>"><img src="<?php echo metadata($record, 'edmPreview'); ?>" class="image" alt="" /><?php echo metadata($record, 'title'); ?></a>
-                <a href="<?php echo metadata($record, 'edmIsShownAt'); ?>"><?php echo metadata($record, 'title'); ?></a>
+                <a href="<?php echo metadata($record, 'edmLandingPage'); ?>"><img src="<?php echo metadata($record, 'edmPreview'); ?>" class="image" alt="" /><?php echo metadata($record, 'title'); ?></a>
             </td>
         </tr>
         <?php endforeach; ?>

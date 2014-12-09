@@ -96,6 +96,7 @@ class Europeana_EuropeanaController extends Omeka_Controller_AbstractActionContr
             'query' => $this->getApiSearchQueryParam(),
             'rows'  => $perPage,
             'start' => $firstResult,
+            'profile' => 'rich',
         );
     }
     
