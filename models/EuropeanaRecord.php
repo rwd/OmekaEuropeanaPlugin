@@ -30,7 +30,9 @@ class EuropeanaRecord extends Omeka_Record_AbstractRecord {
      */
     public function getProperty($property)
     {
-        if (property_exists($this, $property)) {
+        if (strtolower($property) == 'edmlandingpage') {
+            return "http://www.europeana.eu/portal/record{$this->id}.html";
+        } else if (property_exists($this, $property)) {
             return $this->$property;
         } else {
             foreach ($this as $key => $value) {
