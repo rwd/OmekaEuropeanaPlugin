@@ -1,13 +1,13 @@
 <?php
 /**
- * Europeana
+ * Europeana_EuropeanaController
  *
  * @copyright Copyright 2014 Richard Doe
  * @license http://www.gnu.org/licenses/gpl-3.0.txt GNU GPLv3
  */
 
 /**
- * Search controller.
+ * @package Europeana
  */
 class Europeana_EuropeanaController extends Omeka_Controller_AbstractActionController
 {
