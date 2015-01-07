@@ -11,6 +11,22 @@
  *   object from the response.
  */
 class EuropeanaRecord extends Omeka_Record_AbstractRecord {
+    
+    protected $_apiProperties = array(
+        "dataProvider", "dcCreator", "edmIsShownAt", "edmPlaceLatitude", 
+        "edmPlaceLongitude", "edmPreview", "europeanaCompleteness", 
+        "guid", "id", "link", "provider", "rights", "score", "title", "type", 
+        "year", "edmConceptTerm", "edmConceptPrefLabel", "edmConceptBroaderTerm", 
+        "edmConceptBroaderLabel", "edmTimespanLabel", "edmTimespanBegin", 
+        "edmTimespanEnd", "edmTimespanBroaderTerm", "edmTimespanBroaderLabel", 
+        "recordHashFirstSix", "ugc", "completeness", "country", 
+        "europeanaCollectionName", "edmPlaceBroaderTerm", "edmPlaceAltLabel", 
+        "dctermsIsPartOf", "timestampCreated", "timestampUpdate", "language", 
+        "dctermsSpatial", "edmPlace", "edmTimespan", "edmAgent", 
+        "edmAgentLabel", "dcContributor", "edmIsShownBy", "dcDescription", 
+        "edmLandingPage"
+    );
+    
     public function construct()
     {
         $this->lock();
@@ -30,17 +46,26 @@ class EuropeanaRecord extends Omeka_Record_AbstractRecord {
      */
     public function getProperty($property)
     {
-        if (strtolower($property) == 'edmlandingpage') {
-            return "http://www.europeana.eu/portal/record{$this->id}.html";
-        } else if (property_exists($this, $property)) {
-            return $this->$property;
-        } else {
-            foreach ($this as $key => $value) {
-                if (strtolower($key) == $property) {
-                    return $this->getProperty($key);
-                }
+        static $lowApiProperties;
+        if (empty($lowApiProperties)) {
+            $lowApiProperties = array();
+            foreach ($this->_apiProperties as $apiProperty) {
+                $lowApiProperties[strtolower($apiProperty)] = $apiProperty;
             }
         }
+        
+        $field = array_key_exists($property, $lowApiProperties) ? $lowApiProperties[$property] : $property;
+        
+        if ($field == 'edmLandingPage') {
+            return "http://www.europeana.eu/portal/record{$this->id}.html";
+        } else if (in_array($field, $this->_apiProperties)) {
+            if (property_exists($this, $field)) {
+                return $this->$field;
+            } else {
+                return null;
+            }
+        }
+        
         throw new InvalidArgumentException(__("'%s' is an invalid special value.", $property));
     }
 
