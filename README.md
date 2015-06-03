@@ -48,7 +48,3 @@ To include the Europeana search form elsewhere on your Omeka site, use the
 shortcode `[europeana_search_form]`.
 
 For more information on using shortcodes in Omeka, see http://omeka.org/codex/Shortcodes
-
-## Change log
-
-See CHANGELOG.md
